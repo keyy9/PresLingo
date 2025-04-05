@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson Detail - PresLingo</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .lesson-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <i class="fas fa-language text-3xl text-blue-600 mr-2"></i>
+                        <span class="text-xl font-bold text-gray-800">PresLingo</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="index.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md font-medium">Home</a>
+                    <a href="lessons.html" class="text-gray-800 hover:text-blue-600 px-3 py-2 rounded-md font-medium">Lessons</a>
+                    <a href="practice.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md font-medium">Practice</a>
+                    <a href="quiz.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md font-medium">Quiz</a>
+                    <a href="profile.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md font-medium">Profile</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="mobile-menu-button">
+                        <i class="fas fa-bars text-gray-600 text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="mobile-menu hidden md:hidden">
+            <a href="index.html" class="block text-gray-600 hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md text-base font-medium">Home</a>
+            <a href="lessons.html" class="block text-gray-800 hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md text-base font-medium">Lessons</a>
+            <a href="practice.html" class="block text-gray-600 hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md text-base font-medium">Practice</a>
+            <a href="quiz.html" class="block text-gray-600 hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md text-base font-medium">Quiz</a>
+            <a href="profile.html" class="block text-gray-600 hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md text-base font-medium">Profile</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="pt-16">
+        <!-- Lesson Header -->
+        <div class="bg-white shadow">
+            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center">
+                    <a href="lessons.html" class="text-blue-600 hover:text-blue-800 mr-4">
+                        <i class="fas fa-arrow-left"></i> Back to Lessons
+                    </a>
+                    <h1 class="text-3xl font-bold text-gray-900">Basic Greetings in Chinese</h1>
+                </div>
+                <div class="mt-2 flex items-center">
+                    <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">Beginner</span>
+                    <span class="ml-4 text-gray-500">
+                        <i class="fas fa-clock mr-1"></i> 15 minutes
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lesson Content -->
+        <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <!-- Video Section -->
+                <div class="aspect-w-16 aspect-h-9">
+                    <iframe class="w-full h-[400px]" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <!-- Lesson Content -->
+                <div class="p-6">
+                    <div class="lesson-content space-y-6">
+                        <!-- Introduction -->
+                        <section>
+                            <h2 class="text-2xl font-bold text-gray-900 mb-4">Introduction</h2>
+                            <p class="text-gray-600">Welcome to your first Chinese lesson! In this lesson, you'll learn the most common greetings used in Chinese-speaking regions. These phrases will help you start basic conversations and make a great first impression.</p>
+                        </section>
+
+                        <!-- Key Phrases -->
+                        <section class="mt-8">
+                            <h3 class="text-xl font-bold text-gray-900 mb-4">Key Phrases</h3>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <p class="text-lg font-semibold text-blue-600">你好 (Nǐ hǎo)</p>
+                                    <p class="text-gray-600">Hello!</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <p class="text-lg font-semibold text-blue-600">早安 (Zǎo ān)</p>
+                                    <p class="text-gray-600">Good morning</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <p class="text-lg font-semibold text-blue-600">下午好 (Xià wǔ hǎo)</p>
+                                    <p class="text-gray-600">Good afternoon</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <p class="text-lg font-semibold text-blue-600">晚安 (Wǎn ān)</p>
+                                    <p class="text-gray-600">Good evening/night</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Practice Section -->
+                        <section class="mt-8">
+                            <h3 class="text-xl font-bold text-gray-900 mb-4">Practice</h3>
+                            <div class="bg-blue-50 p-6 rounded-lg">
+                                <h4 class="font-semibold text-blue-900 mb-2">Listen and Repeat</h4>
+                                <div class="space-y-4">
+                                    <div class="flex items-center">
+                                        <button class="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700">
+                                            <i class="fas fa-play"></i>
+                                        </button>
+                                        <span class="ml-4 text-gray-700">你好 (Nǐ hǎo)</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <button class="bg-blue-600 text-white p-2 rounded-full hover:bg-blue-700">
+                                            <i class="fas fa-play"></i>
+                                        </button>
+                                        <span class="ml-4 text-gray-700">早安 (Zǎo ān)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Quiz Section -->
+                        <section class="mt-8">
+                            <h3 class="text-xl font-bold text-gray-900 mb-4">Quick Quiz</h3>
+                            <div class="space-y-4">
+                                <div class="bg-white border border-gray-200 p-4 rounded-lg">
+                                    <p class="font-medium text-gray-900 mb-2">What does "你好" (Nǐ hǎo) mean?</p>
+                                    <div class="space-y-2">
+                                        <label class="flex items-center">
+                                            <input type="radio" name="q1" class="form-radio text-blue-600">
+                                            <span class="ml-2 text-gray-700">Good evening</span>
+                                        </label>
+                                        <label class="flex items-center">
+                                            <input type="radio" name="q1" class="form-radio text-blue-600">
+                                            <span class="ml-2 text-gray-700">Hello</span>
+                                        </label>
+                                        <label class="flex items-center">
+                                            <input type="radio" name="q1" class="form-radio text-blue-600">
+                                            <span class="ml-2 text-gray-700">Good night</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Navigation Buttons -->
+                        <div class="flex justify-between items-center mt-8">
+                            <button class="bg-gray-200 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-300 transition duration-300">
+                                <i class="fas fa-arrow-left mr-2"></i> Previous Lesson
+                            </button>
+                            <button class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                                Next Lesson <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <i class="fas fa-language text-2xl text-blue-400 mr-2"></i>
+                    <span class="text-xl font-bold">PresLingo</span>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-blue-400 transition duration-300">
+                        <i class="fab fa-facebook text-xl"></i>
+                    </a>
+                    <a href="#" class="hover:text-blue-400 transition duration-300">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="hover:text-blue-400 transition duration-300">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-4 text-center text-gray-400 text-sm">
+                © 2024 PresLingo. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.toggle('hidden');
+        });
+
+        // Get lesson ID from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const lessonId = urlParams.get('lesson');
+        console.log('Loading lesson:', lessonId);
+
+        // Audio playback simulation
+        document.querySelectorAll('.fa-play').forEach(button => {
+            button.addEventListener('click', function() {
+                // In a real app, this would trigger audio playback
+                console.log('Playing audio...');
+            });
+        });
+    </script>
+</body>
+</html>
