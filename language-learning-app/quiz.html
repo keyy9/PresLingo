@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - PresLingo</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #a7c5e0 0%, #ff7e89 100%);
+            min-height: 100vh;
+        }
+        .bg-white {
+            background-color: #ffffff !important;
+        }
+        .bg-blue-600 {
+            background-color: #a7c5e0 !important;
+        }
+        .hover\:bg-blue-700:hover {
+            background-color: #96b4cf !important;
+        }
+        .text-blue-600 {
+            color: #a7c5e0 !important;
+        }
+        .border-blue-600 {
+            border-color: #a7c5e0 !important;
+        }
+        .ring-blue-500 {
+            --tw-ring-color: #a7c5e0 !important;
+        }
+        .quiz-option {
+            transition: all 0.3s ease;
+            background-color: #ff7e89 !important;
+            color: white !important;
+        }
+        .quiz-option:hover {
+            background-color: #ff6b78 !important;
+        }
+        .quiz-option.selected {
+            background-color: #ff5a69 !important;
+            border-color: #ff4757 !important;
+        }
+        .quiz-option.correct {
+            background-color: #DCFCE7;
+            border-color: #16A34A;
+        }
+        .quiz-option.incorrect {
+            background-color: #FEE2E2;
+            border-color: #DC2626;
+        }
+        .text-gray-600, .text-gray-700, .text-gray-800, .text-gray-900 {
+            color: white !important;
+        }
+        #quizSelection, #quizArea > div, #resultsArea {
+            background-color: #ff7e89 !important;
+            color: white;
+        }
+        .bg-gray-200 {
+            background-color: rgba(255, 255, 255, 0.2) !important;
+        }
+        .bg-blue-50 {
+            background-color: rgba(167, 197, 224, 0.1) !important;
+        }
+        .text-blue-800 {
+            color: white !important;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <i class="fas fa-language text-3xl text-blue-600 mr-2"></i>
+                        <span class="text-xl font-bold text-gray-800">PresLingo</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="index.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md font-medium">Home</a>
+                    <a href="lessons.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md font-medium">Lessons</a>
+                    <a href="practice.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md font-medium">Practice</a>
+                    <a href="quiz.html" class="text-gray-800 hover:text-blue-600 px-3 py-2 rounded-md font-medium">Quiz</a>
+                    <a href="profile.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md font-medium">Profile</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="mobile-menu-button">
+                        <i class="fas fa-bars text-gray-600 text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="mobile-menu hidden md:hidden">
+            <a href="index.html" class="block text-gray-600 hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md text-base font-medium">Home</a>
+            <a href="lessons.html" class="block text-gray-600 hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md text-base font-medium">Lessons</a>
+            <a href="practice.html" class="block text-gray-600 hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md text-base font-medium">Practice</a>
+            <a href="quiz.html" class="block text-gray-800 hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md text-base font-medium">Quiz</a>
+            <a href="profile.html" class="block text-gray-600 hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md text-base font-medium">Profile</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="pt-16">
+        <!-- Header -->
+        <div class="bg-white shadow">
+            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <h1 class="text-3xl font-bold text-gray-900">Language Quiz</h1>
+                <p class="mt-2 text-gray-600">Test your knowledge and track your progress</p>
+            </div>
+        </div>
+
+        <!-- Quiz Content -->
+        <div class="max-w-3xl mx-auto py-6 sm:px-6 lg:px-8">
+            <!-- Quiz Selection -->
+            <div id="quizSelection" class="bg-white rounded-lg shadow-lg p-6 mb-6">
+                <h2 class="text-xl font-semibold text-gray-900 mb-4">Select Quiz Type</h2>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <select id="languageSelect" class="bg-white border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="mandarin">Mandarin Chinese</option>
+                        <option value="cantonese">Cantonese Chinese</option>
+                        <option value="hokkien">Hokkien Chinese</option>
+                    </select>
+                    <select id="levelSelect" class="bg-white border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="beginner">Beginner</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advanced">Advanced</option>
+                    </select>
+                </div>
+                <button onclick="startQuiz()" class="mt-4 w-full bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition duration-300">
+                    Start Quiz
+                </button>
+            </div>
+
+            <!-- Quiz Area -->
+            <div id="quizArea" class="hidden">
+                <!-- Progress Bar -->
+                <div class="bg-white rounded-lg shadow-lg p-4 mb-6">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm font-medium text-gray-700">Progress</span>
+                        <span id="progressText" class="text-sm font-medium text-gray-700">Question 1/3</span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                        <div id="progressBar" class="bg-blue-600 h-2.5 rounded-full transition-all duration-300" style="width: 33%"></div>
+                    </div>
+                </div>
+
+                <!-- Question Card -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 id="questionText" class="text-xl font-semibold text-gray-900 mb-6"></h3>
+                    <div id="options" class="space-y-3">
+                        <!-- Options will be dynamically populated -->
+                    </div>
+                    <div id="feedback" class="hidden mt-6 p-4 rounded-lg"></div>
+                    <div class="mt-6 flex justify-between">
+                        <button id="prevButton" onclick="previousQuestion()" class="bg-gray-200 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-300 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
+                            Previous
+                        </button>
+                        <button id="nextButton" onclick="nextQuestion()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                            Next
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Area -->
+            <div id="resultsArea" class="hidden bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">Quiz Results</h2>
+                <div class="mb-6">
+                    <div class="text-4xl font-bold text-center text-blue-600 mb-2">
+                        <span id="scorePercentage">0</span>%
+                    </div>
+                    <p class="text-center text-gray-600">
+                        You got <span id="correctAnswers">0</span> out of <span id="totalQuestions">3</span> questions correct
+                    </p>
+                </div>
+                <div id="resultsFeedback" class="mb-6 p-4 bg-blue-50 rounded-lg text-blue-800">
+                </div>
+                <div class="flex justify-center space-x-4">
+                    <button onclick="retakeQuiz()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                        Retake Quiz
+                    </button>
+                    <a href="practice.html" class="bg-gray-200 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-300 transition duration-300">
+                        Practice More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <i class="fas fa-language text-2xl text-blue-400 mr-2"></i>
+                    <span class="text-xl font-bold">PresLingo</span>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-blue-400 transition duration-300">
+                        <i class="fab fa-facebook text-xl"></i>
+                    </a>
+                    <a href="#" class="hover:text-blue-400 transition duration-300">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="hover:text-blue-400 transition duration-300">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-4 text-center text-gray-400 text-sm">
+                © 2024 PresLingo. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.toggle('hidden');
+        });
+
+        // Quiz data
+        const quizQuestions = [
+            {
+                question: "What is '你好' (Nǐ hǎo) in English?",
+                options: ["Hello", "Goodbye", "Thank you", "Please"],
+                correct: 0
+            },
+            {
+                question: "How do you say 'Good morning' in Chinese?",
+                options: ["晚安 (Wǎn ān)", "早安 (Zǎo ān)", "下午好 (Xià wǔ hǎo)", "再见 (Zài jiàn)"],
+                correct: 1
+            },
+            {
+                question: "What does '谢谢' (Xièxie) mean?",
+                options: ["Please", "Hello", "Goodbye", "Thank you"],
+                correct: 3
+            }
+        ];
+
+        let currentQuestion = 0;
+        let userAnswers = new Array(quizQuestions.length).fill(null);
+
+        function startQuiz() {
+            document.getElementById('quizSelection').classList.add('hidden');
+            document.getElementById('quizArea').classList.remove('hidden');
+            document.getElementById('resultsArea').classList.add('hidden');
+            currentQuestion = 0;
+            userAnswers = new Array(quizQuestions.length).fill(null);
+            showQuestion(0);
+        }
+
+        function showQuestion(index) {
+            currentQuestion = index;
+            const question = quizQuestions[index];
+            document.getElementById('questionText').textContent = question.question;
+            
+            const optionsContainer = document.getElementById('options');
+            optionsContainer.innerHTML = '';
+            
+            question.options.forEach((option, i) => {
+                const button = document.createElement('button');
+                button.className = `quiz-option w-full text-left p-4 border rounded-lg transition-all duration-300`;
+                if (userAnswers[index] === i) {
+                    button.classList.add('selected');
+                }
+                button.onclick = () => selectOption(i);
+                button.textContent = option;
+                optionsContainer.appendChild(button);
+            });
+
+            // Update progress bar
+            const progress = ((index + 1) / quizQuestions.length) * 100;
+            document.getElementById('progressBar').style.width = `${progress}%`;
+            document.getElementById('progressText').textContent = `Question ${index + 1}/${quizQuestions.length}`;
+
+            // Update navigation buttons
+            document.getElementById('prevButton').disabled = index === 0;
+            const nextButton = document.getElementById('nextButton');
+            nextButton.textContent = index === quizQuestions.length - 1 ? 'Finish Quiz' : 'Next';
+        }
+
+        function selectOption(optionIndex) {
+            userAnswers[currentQuestion] = optionIndex;
+            document.querySelectorAll('.quiz-option').forEach((option, i) => {
+                option.classList.remove('selected');
+                if (i === optionIndex) {
+                    option.classList.add('selected');
+                }
+            });
+        }
+
+        function previousQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                showQuestion(currentQuestion);
+            }
+        }
+
+        function nextQuestion() {
+            if (userAnswers[currentQuestion] === null) {
+                alert('Please select an answer before proceeding.');
+                return;
+            }
+            
+            if (currentQuestion === quizQuestions.length - 1) {
+                showResults();
+            } else {
+                currentQuestion++;
+                showQuestion(currentQuestion);
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quizArea').classList.add('hidden');
+            document.getElementById('resultsArea').classList.remove('hidden');
+            
+            const correctCount = userAnswers.reduce((count, answer, index) => 
+                count + (answer === quizQuestions[index].correct ? 1 : 0), 0);
+            
+            const percentage = Math.round((correctCount / quizQuestions.length) * 100);
+            
+            document.getElementById('scorePercentage').textContent = percentage;
+            document.getElementById('correctAnswers').textContent = correctCount;
+            document.getElementById('totalQuestions').textContent = quizQuestions.length;
+
+            // Set feedback message based on score
+            const feedbackDiv = document.getElementById('resultsFeedback');
+            if (percentage >= 80) {
+                feedbackDiv.textContent = "Excellent! You've shown a great understanding of Chinese phrases!";
+            } else if (percentage >= 60) {
+                feedbackDiv.textContent = "Good job! Keep practicing to improve your Chinese language skills.";
+            } else {
+                feedbackDiv.textContent = "Keep practicing! Review the lessons and try again to improve your score.";
+            }
+        }
+
+        function retakeQuiz() {
+            document.getElementById('resultsArea').classList.add('hidden');
+            document.getElementById('quizSelection').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
