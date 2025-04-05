@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - PresLingo</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #a7c5e0 0%, #ff7e89 100%);
+            min-height: 100vh;
+        }
+        .bg-white {
+            background-color: #ffffff !important;
+        }
+        .bg-blue-600 {
+            background-color: #a7c5e0 !important;
+        }
+        .hover\:bg-blue-700:hover {
+            background-color: #96b4cf !important;
+        }
+        .text-blue-600 {
+            color: #a7c5e0 !important;
+        }
+        .border-blue-600 {
+            border-color: #a7c5e0 !important;
+        }
+        .ring-blue-500 {
+            --tw-ring-color: #a7c5e0 !important;
+        }
+        .profile-card {
+            background-color: #ff7e89 !important;
+            color: white;
+        }
+        .profile-card h3 {
+            color: white !important;
+        }
+        .profile-card p {
+            color: rgba(255, 255, 255, 0.9) !important;
+        }
+        .text-gray-600, .text-gray-700, .text-gray-800, .text-gray-900 {
+            color: white !important;
+        }
+        .bg-gray-200 {
+            background-color: rgba(255, 255, 255, 0.2) !important;
+        }
+        .bg-gray-100 {
+            background-color: #ff7e89 !important;
+        }
+        .progress-bar {
+            background-color: #a7c5e0 !important;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <i class="fas fa-language text-3xl text-blue-600 mr-2"></i>
+                        <span class="text-xl font-bold text-gray-800">PresLingo</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="index.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md font-medium">Home</a>
+                    <a href="lessons.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md font-medium">Lessons</a>
+                    <a href="practice.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md font-medium">Practice</a>
+                    <a href="quiz.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md font-medium">Quiz</a>
+                    <a href="profile.html" class="text-gray-800 hover:text-blue-600 px-3 py-2 rounded-md font-medium">Profile</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="mobile-menu-button">
+                        <i class="fas fa-bars text-gray-600 text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="mobile-menu hidden md:hidden">
+            <a href="index.html" class="block text-gray-600 hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md text-base font-medium">Home</a>
+            <a href="lessons.html" class="block text-gray-600 hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md text-base font-medium">Lessons</a>
+            <a href="practice.html" class="block text-gray-600 hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md text-base font-medium">Practice</a>
+            <a href="quiz.html" class="block text-gray-600 hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md text-base font-medium">Quiz</a>
+            <a href="profile.html" class="block text-gray-800 hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md text-base font-medium">Profile</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="pt-16">
+        <!-- Header -->
+        <div class="bg-white shadow">
+            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="Profile Picture" class="w-16 h-16 rounded-full mr-4">
+                    <div>
+                        <h1 class="text-3xl font-bold text-gray-900">John Doe</h1>
+                        <p class="mt-1 text-gray-600">Language Learning Enthusiast</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Content -->
+        <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Learning Progress -->
+                <div class="profile-card bg-white rounded-lg shadow-lg p-6">
+                    <h2 class="text-xl font-semibold mb-4">Learning Progress</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Mandarin Chinese</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="progress-bar h-2.5 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Cantonese</span>
+                                <span>45%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="progress-bar h-2.5 rounded-full" style="width: 45%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="profile-card bg-white rounded-lg shadow-lg p-6">
+                    <h2 class="text-xl font-semibold mb-4">Recent Activity</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Completed Lesson: Basic Greetings</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-yellow-500 mr-2"></i>
+                            <span>Earned Badge: Quick Learner</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-trophy text-yellow-500 mr-2"></i>
+                            <span>Quiz Score: 90%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievements -->
+                <div class="profile-card bg-white rounded-lg shadow-lg p-6">
+                    <h2 class="text-xl font-semibold mb-4">Achievements</h2>
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="text-center">
+                            <i class="fas fa-award text-4xl text-yellow-500"></i>
+                            <p class="mt-2 text-sm">Perfect Score</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-fire text-4xl text-orange-500"></i>
+                            <p class="mt-2 text-sm">7 Day Streak</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-graduation-cap text-4xl text-blue-500"></i>
+                            <p class="mt-2 text-sm">Fast Learner</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Learning Stats -->
+                <div class="profile-card bg-white rounded-lg shadow-lg p-6 md:col-span-2">
+                    <h2 class="text-xl font-semibold mb-4">Learning Statistics</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="text-center p-4 bg-gray-100 rounded-lg">
+                            <div class="text-3xl font-bold">24</div>
+                            <div class="text-sm">Lessons Completed</div>
+                        </div>
+                        <div class="text-center p-4 bg-gray-100 rounded-lg">
+                            <div class="text-3xl font-bold">156</div>
+                            <div class="text-sm">Practice Minutes</div>
+                        </div>
+                        <div class="text-center p-4 bg-gray-100 rounded-lg">
+                            <div class="text-3xl font-bold">85%</div>
+                            <div class="text-sm">Average Score</div>
+                        </div>
+                        <div class="text-center p-4 bg-gray-100 rounded-lg">
+                            <div class="text-3xl font-bold">7</div>
+                            <div class="text-sm">Day Streak</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings -->
+                <div class="profile-card bg-white rounded-lg shadow-lg p-6">
+                    <h2 class="text-xl font-semibold mb-4">Settings</h2>
+                    <div class="space-y-4">
+                        <button class="flex items-center space-x-2 hover:text-blue-500">
+                            <i class="fas fa-user-edit"></i>
+                            <span>Edit Profile</span>
+                        </button>
+                        <button class="flex items-center space-x-2 hover:text-blue-500">
+                            <i class="fas fa-bell"></i>
+                            <span>Notifications</span>
+                        </button>
+                        <button class="flex items-center space-x-2 hover:text-blue-500">
+                            <i class="fas fa-cog"></i>
+                            <span>Preferences</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <i class="fas fa-language text-2xl text-blue-400 mr-2"></i>
+                    <span class="text-xl font-bold">PresLingo</span>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-blue-400 transition duration-300">
+                        <i class="fab fa-facebook text-xl"></i>
+                    </a>
+                    <a href="#" class="hover:text-blue-400 transition duration-300">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="hover:text-blue-400 transition duration-300">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-4 text-center text-gray-400 text-sm">
+                © 2024 PresLingo. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
