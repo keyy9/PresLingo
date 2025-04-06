@@ -3,153 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PresLingo - Master Chinese Language</title>
-    <!-- Tailwind CSS -->
+    <title>PresLingo - Learn Chinese Languages</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        body {
+        body { 
             font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #a7c5e0 0%, #ff7e89 100%);
+            min-height: 100vh;
+        }
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
         }
     </style>
 </head>
-<body class="bg-gray-50">
-    <!-- Navigation -->
+<body>
     <nav class="bg-white shadow-lg fixed w-full z-50">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <a href="index.html" class="flex items-center">
-                        <i class="fas fa-language text-3xl text-blue-600 mr-2"></i>
-                        <span class="text-xl font-bold text-gray-800">PresLingo</span>
-                    </a>
-                </div>
-                <div class="hidden md:flex items-center space-x-4">
-                    <a href="index.html" class="text-gray-800 hover:text-blue-600 px-3 py-2 rounded-md font-medium">Home</a>
-                    <a href="lessons.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md font-medium">Lessons</a>
-                    <a href="practice.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md font-medium">Practice</a>
-                    <a href="quiz.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md font-medium">Quiz</a>
-                    <a href="profile.html" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md font-medium">Profile</a>
-                </div>
-                <div class="md:hidden flex items-center">
-                    <button class="mobile-menu-button">
-                        <i class="fas fa-bars text-gray-600 text-2xl"></i>
-                    </button>
+                <a href="index.html" class="flex items-center">
+                    <img src="data:image/png;base64,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" alt="PresLingo Logo" class="logo-img mr-2">
+                    <span class="text-xl font-bold">
+                        <span class="text-[#a7c5e0]">Pres</span><span class="text-[#ff7e89]">Lingo</span>
+                    </span>
+                </a>
+                <div class="hidden md:flex space-x-4">
+                    <a href="index.html" class="text-gray-800 hover:text-[#a7c5e0] px-3 py-2 rounded-md font-medium">Home</a>
+                    <a href="lessons.html" class="text-gray-600 hover:text-[#a7c5e0] px-3 py-2 rounded-md font-medium">Lessons</a>
+                    <a href="practice.html" class="text-gray-600 hover:text-[#a7c5e0] px-3 py-2 rounded-md font-medium">Practice</a>
+                    <a href="quiz.html" class="text-gray-600 hover:text-[#a7c5e0] px-3 py-2 rounded-md font-medium">Quiz</a>
+                    <a href="profile.html" class="text-gray-600 hover:text-[#a7c5e0] px-3 py-2 rounded-md font-medium">Profile</a>
                 </div>
             </div>
-        </div>
-        <!-- Mobile menu -->
-        <div class="mobile-menu hidden md:hidden">
-            <a href="index.html" class="block text-gray-800 hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md text-base font-medium">Home</a>
-            <a href="lessons.html" class="block text-gray-600 hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md text-base font-medium">Lessons</a>
-            <a href="practice.html" class="block text-gray-600 hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md text-base font-medium">Practice</a>
-            <a href="quiz.html" class="block text-gray-600 hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md text-base font-medium">Quiz</a>
-            <a href="profile.html" class="block text-gray-600 hover:bg-blue-600 hover:text-white px-3 py-2 rounded-md text-base font-medium">Profile</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <div class="relative bg-white pt-16">
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.pexels.com/photos/267669/pexels-photo-267669.jpeg" alt="Background" class="w-full h-full object-cover opacity-20">
-        </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="py-20 md:py-28">
-                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-Master Chinese <br/>
-                    <span class="text-blue-600">With Confidence</span>
-                </h1>
-                <p class="text-xl text-gray-600 mb-8 max-w-2xl">
-                    Start your Chinese language learning journey today with our interactive lessons, 
-                    practice exercises, and personalized learning path designed specifically for Mandarin Chinese.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="lessons.html" class="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 text-center">
-                        Start Learning Now
-                        <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                    <a href="#features" class="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold border-2 border-blue-600 hover:bg-blue-50 transition duration-300 text-center">
-                        Learn More
-                    </a>
-                </div>
+    <main class="pt-16 p-8">
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="text-5xl font-bold mb-4 text-white">
+                Master Chinese<br>With Confidence
+            </h1>
+            <p class="text-xl text-white mb-8">
+                Start your Chinese language learning journey today with our<br>
+                interactive lessons, practice exercises, and personalized learning path.
+            </p>
+            <div class="flex justify-center space-x-4">
+                <a href="lessons.html" class="bg-white text-[#a7c5e0] px-8 py-3 rounded-lg font-medium hover:bg-opacity-90">
+                    Start Learning Now
+                </a>
+                <a href="#features" class="bg-[#ff7e89] text-white px-8 py-3 rounded-lg font-medium hover:bg-opacity-90">
+                    Learn More
+                </a>
             </div>
         </div>
-    </div>
+    </main>
 
-    <!-- Features Section -->
-    <section id="features" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Why Choose PresLingo?</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Interactive Lessons -->
-                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
-                    <div class="text-blue-600 mb-4">
-                        <i class="fas fa-book-reader text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Interactive Lessons</h3>
-                    <p class="text-gray-600">
-                        Engage with our interactive lessons designed to make learning fun and effective.
-                    </p>
-                </div>
-                <!-- Practice Exercises -->
-                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
-                    <div class="text-blue-600 mb-4">
-                        <i class="fas fa-tasks text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Practice Exercises</h3>
-                    <p class="text-gray-600">
-                        Reinforce your learning with practical exercises and real-world scenarios.
-                    </p>
-                </div>
-                <!-- Progress Tracking -->
-                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
-                    <div class="text-blue-600 mb-4">
-                        <i class="fas fa-chart-line text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Progress Tracking</h3>
-                    <p class="text-gray-600">
-                        Monitor your progress and stay motivated with detailed performance insights.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="flex items-center mb-4 md:mb-0">
-                    <i class="fas fa-language text-2xl text-blue-400 mr-2"></i>
-                    <span class="text-xl font-bold">PresLingo</span>
-                </div>
-                <div class="flex space-x-6">
-                    <a href="#" class="hover:text-blue-400 transition duration-300">
-                        <i class="fab fa-facebook text-xl"></i>
-                    </a>
-                    <a href="#" class="hover:text-blue-400 transition duration-300">
-                        <i class="fab fa-twitter text-xl"></i>
-                    </a>
-                    <a href="#" class="hover:text-blue-400 transition duration-300">
-                        <i class="fab fa-instagram text-xl"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="mt-4 text-center text-gray-400 text-sm">
-                © 2024 PresLingo. All rights reserved.
-            </div>
-        </div>
-    </footer>
-
-    <!-- JavaScript -->
-    <script>
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu-button').addEventListener('click', function() {
-            document.querySelector('.mobile-menu').classList.toggle('hidden');
-        });
-    </script>
-</body>
-</html>
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex justify-center items-center mb-4">
+                <img src="data:image/png;base64,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
